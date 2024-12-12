@@ -1,0 +1,1 @@
+The CSS property `calc()` is used incorrectly in the following rule:  `width: calc(100% - 20px);`.  The browser might misinterpret this, especially if the containing element doesn't have a defined width.  This often results in unexpected or inconsistent widths across different screen sizes or if the parent element's width depends on content.
