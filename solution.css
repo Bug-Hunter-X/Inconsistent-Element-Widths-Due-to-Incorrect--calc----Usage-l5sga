@@ -1,0 +1,24 @@
+The `calc()` function should only be used when the parent element's width is explicitly defined or when the calculation is independent of dynamic parent dimensions.  For example:
+
+```css
+/* Correct usage: Parent element has a defined width */
+.container {
+  width: 500px;
+}
+
+.element {
+  width: calc(100% - 20px);
+}
+
+/* Alternative: Avoid calc() entirely with more robust layout*/
+.container {
+ display: flex;
+}
+
+.element {
+  width: 0;
+  flex-grow: 1;
+  margin: 0 10px; /*Adjust margin to account for 20px total margin*/
+}
+```
+Avoid using `calc()` to calculate a percentage based on a dynamically sized parent unless you're certain that parent will always have a defined width.
